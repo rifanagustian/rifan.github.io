@@ -3,66 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rifan Agustian - Developer Portfolio</title>
+    <title>Rifan Agustian - Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); }
-        .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15); }
-        .skill-tag { transition: all 0.3s ease; }
-        .skill-tag:hover { background-color: #3b82f6; color: white; }
-        .smooth-scroll { scroll-behavior: smooth; }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5), 0 0 40px rgba(102, 126, 234, 0.3), 0 0 60px rgba(102, 126, 234, 0.1);
+        }
+        
+        .floating-animation {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(5px) rotate(-1deg); }
+        }
+        
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+        }
+        
+        .card-3d:hover {
+            transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+        }
+        
+        .skill-orb {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-orb:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .typing-animation {
+            border-right: 2px solid #667eea;
+            animation: typing 3s steps(30) infinite, blink 1s infinite;
+        }
+        
+        @keyframes typing {
+            0%, 50% { width: 0; }
+            100% { width: 100%; }
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: transparent; }
+            51%, 100% { border-color: #667eea; }
+        }
+        
+        .particle {
+            position: absolute;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            animation: particle-float 8s infinite ease-in-out;
+        }
+        
+        @keyframes particle-float {
+            0%, 100% { transform: translateY(0px) translateX(0px) scale(1); opacity: 0.7; }
+            25% { transform: translateY(-100px) translateX(50px) scale(1.2); opacity: 1; }
+            50% { transform: translateY(-50px) translateX(-30px) scale(0.8); opacity: 0.5; }
+            75% { transform: translateY(-80px) translateX(80px) scale(1.1); opacity: 0.8; }
+        }
+        
+        .morphing-bg {
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
     </style>
 </head>
-<body class="bg-gray-50 smooth-scroll">
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Floating Particles -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="particle w-2 h-2 top-1/4 left-1/4" style="animation-delay: 0s;"></div>
+        <div class="particle w-1 h-1 top-1/3 right-1/4" style="animation-delay: 2s;"></div>
+        <div class="particle w-3 h-3 bottom-1/4 left-1/3" style="animation-delay: 4s;"></div>
+        <div class="particle w-1.5 h-1.5 top-1/2 right-1/3" style="animation-delay: 6s;"></div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
-        <div class="max-w-6xl mx-auto px-6 py-4">
+    <nav class="fixed top-0 w-full z-50 glass-card">
+        <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="text-xl font-bold text-blue-600">Rifan Agustian</div>
+                <div class="text-2xl font-bold gradient-text">Rifan</div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-                    <a href="#portfolio" class="text-gray-700 hover:text-blue-600 transition-colors">Portfolio</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                    <a href="#home" class="hover:text-purple-400 transition-all duration-300 relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#about" class="hover:text-purple-400 transition-all duration-300 relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#portfolio" class="hover:text-purple-400 transition-all duration-300 relative group">
+                        Portfolio
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="hover:text-purple-400 transition-all duration-300 relative group">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:text-purple-400 transition-colors">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
-            </div>
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
-                <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">About</a>
-                <a href="#portfolio" class="block py-2 text-gray-700 hover:text-blue-600">Portfolio</a>
-                <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center text-white">
-        <div class="max-w-6xl mx-auto px-6 py-20 text-center">
-            <div class="mb-8">
-                <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-white/20 backdrop-blur-sm overflow-hidden border-4 border-white/30">
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative">
+        <div class="max-w-7xl mx-auto px-6 py-20 text-center relative z-10">
+            <!-- Profile Image with Advanced Effects -->
+            <div class="relative mx-auto mb-12 w-64 h-64 group">
+                <!-- Outer rotating ring -->
+                <div class="absolute -inset-4 morphing-bg rounded-full opacity-70 blur-sm animate-spin" style="animation-duration: 10s;"></div>
+                
+                <!-- Middle pulsing ring -->
+                <div class="absolute -inset-2 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-full opacity-50 animate-pulse"></div>
+                
+                <!-- Inner glowing border -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-full opacity-80 blur-sm"></div>
+                
+                <!-- Main image container -->
+                <div class="relative w-full h-full rounded-full overflow-hidden glass-card neon-glow floating-animation group-hover:scale-110 transition-all duration-500">
                     <img src="rifan.jpeg" alt="Rifan Agustian" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="w-full h-full flex items-center justify-center" style="display: none;">
-                        <i class="fas fa-user text-4xl text-white"></i>
+                    <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-600 to-blue-600" style="display: none;">
+                        <i class="fas fa-user text-6xl text-white drop-shadow-2xl"></i>
+                    </div>
+                    
+                    <!-- Overlay effects -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-transparent to-blue-900/30 rounded-full"></div>
+                </div>
+                
+                <!-- Floating elements around image -->
+                <div class="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-bounce opacity-80"></div>
+                <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-pulse opacity-80"></div>
+                <div class="absolute top-1/2 -left-8 w-4 h-4 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full animate-ping opacity-60"></div>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="space-y-6">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">Rifan</span>
+                    <span class="text-white">Agustian</span>
+                </h1>
+                
+                <div class="text-2xl md:text-3xl text-gray-300 mb-8 h-12 overflow-hidden">
+                    <div class="typing-animation whitespace-nowrap">
+                        Machine Learning & IoT Enthusiast
                     </div>
                 </div>
-                <h1 class="text-5xl md:text-6xl font-bold mb-4">Rifan Agustian</h1>
-                <p class="text-xl md:text-2xl text-blue-100 mb-8">Machine Learning & IoT Enthusiast</p>
-                <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
-                    Menciptakan solusi teknologi pintar untuk kehidupan yang lebih baik
+                
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-12">
+                    Menciptakan solusi teknologi pintar yang mengubah cara kita berinteraksi dengan dunia digital. 
+                    Spesialisasi dalam Computer Vision, IoT Systems, dan Web Development.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#portfolio" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                        Lihat Portfolio
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="#portfolio" class="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 hover:scale-105 neon-glow">
+                        <span class="relative z-10">Explore My Work</span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </a>
-                    <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                        Hubungi Saya
+                    
+                    <a href="#contact" class="group px-8 py-4 border-2 border-purple-500 rounded-full font-semibold text-lg hover:bg-purple-500 transition-all duration-300 hover:scale-105 relative overflow-hidden">
+                        <span class="relative z-10">Get In Touch</span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                     </a>
                 </div>
             </div>
@@ -70,53 +229,70 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">About Me</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+    <section id="about" class="py-32 bg-gray-900 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-bold gradient-text mb-6">About Me</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Tentang Saya</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        Saya Rifan Agustian, seorang pengembang web dan IoT enthusiast yang fokus pada solusi teknologi pintar. Keahlian saya meliputi pengembangan website responsif, integrasi API, dan pembuatan sistem berbasis ESP32 dengan teknologi Computer Vision.
-                    </p>
-                    <p class="text-gray-600 leading-relaxed">
-                        Saya percaya bahwa teknologi dapat menghadirkan solusi nyata untuk kehidupan sehari-hari.
-                    </p>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <div class="glass-card p-8 rounded-3xl card-3d">
+                        <h3 class="text-3xl font-bold text-white mb-6">Passionate Developer</h3>
+                        <p class="text-gray-300 leading-relaxed text-lg mb-6">
+                            Saya adalah seorang developer yang passionate dalam menciptakan solusi teknologi inovatif. 
+                            Dengan keahlian dalam Machine Learning, IoT, dan Web Development, saya fokus pada 
+                            pengembangan sistem yang dapat memberikan dampak nyata.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed text-lg">
+                            Setiap proyek yang saya kerjakan adalah kesempatan untuk belajar dan berinovasi, 
+                            menciptakan teknologi yang tidak hanya canggih tetapi juga mudah digunakan.
+                        </p>
+                    </div>
                 </div>
                 
-                <div>
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Skills & Expertise</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-2">Web Development</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">HTML</span>
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CSS</span>
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PHP</span>
+                <!-- Right Content - Skills -->
+                <div class="space-y-8">
+                    <h3 class="text-3xl font-bold text-center gradient-text mb-12">Tech Stack</h3>
+                    
+                    <!-- Skill Categories -->
+                    <div class="space-y-8">
+                        <div class="glass-card p-6 rounded-2xl">
+                            <h4 class="text-xl font-semibold text-white mb-4 flex items-center">
+                                <i class="fas fa-code text-purple-400 mr-3"></i>
+                                Web Development
+                            </h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="skill-orb px-4 py-2 rounded-full text-white text-sm font-medium">HTML5</span>
+                                <span class="skill-orb px-4 py-2 rounded-full text-white text-sm font-medium">CSS3</span>
+                                <span class="skill-orb px-4 py-2 rounded-full text-white text-sm font-medium">JavaScript</span>
+                                <span class="skill-orb px-4 py-2 rounded-full text-white text-sm font-medium">PHP</span>
                             </div>
                         </div>
                         
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-2">IoT & Embedded Systems</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ESP32</span>
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Arduino</span>
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Sensor Otomatis</span>
+                        <div class="glass-card p-6 rounded-2xl">
+                            <h4 class="text-xl font-semibold text-white mb-4 flex items-center">
+                                <i class="fas fa-microchip text-blue-400 mr-3"></i>
+                                IoT & Embedded
+                            </h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="skill-orb px-4 py-2 rounded-full text-white text-sm font-medium">ESP32</span>
+                                <span class="skill-orb px-4 py-2 rounded-full text-white text-sm font-medium">Arduino</span>
+                                <span class="skill-orb px-4 py-2 rounded-full text-white text-sm font-medium">Sensors</span>
                             </div>
                         </div>
                         
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-2">Computer Vision & API</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">OpenCV</span>
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">YOLOv5</span>
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Telegram Bot</span>
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Fonnte API</span>
+                        <div class="glass-card p-6 rounded-2xl">
+                            <h4 class="text-xl font-semibold text-white mb-4 flex items-center">
+                                <i class="fas fa-eye text-cyan-400 mr-3"></i>
+                                AI & Computer Vision
+                            </h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="skill-orb px-4 py-2 rounded-full text-white text-sm font-medium">OpenCV</span>
+                                <span class="skill-orb px-4 py-2 rounded-full text-white text-sm font-medium">YOLOv5</span>
+                                <span class="skill-orb px-4 py-2 rounded-full text-white text-sm font-medium">TensorFlow</span>
                             </div>
                         </div>
                     </div>
@@ -126,87 +302,85 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Portfolio</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
-                <p class="text-gray-600">Beberapa proyek yang telah saya kerjakan</p>
+    <section id="portfolio" class="py-32 bg-gray-800 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-bold gradient-text mb-6">Featured Projects</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Beberapa proyek terbaik yang menunjukkan keahlian dan kreativitas saya
+                </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid lg:grid-cols-3 gap-8">
                 <!-- Featured Project -->
-                <div class="md:col-span-2 lg:col-span-3">
-                    <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
-                        <div class="p-8">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-car text-white text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold text-gray-800">Salip Kiri</h3>
-                                    <p class="text-blue-600 font-semibold">Featured Project</p>
-                                </div>
+                <div class="lg:col-span-3">
+                    <div class="glass-card p-8 rounded-3xl card-3d group hover:neon-glow transition-all duration-500">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-car text-white text-2xl"></i>
                             </div>
-                            <p class="text-gray-600 mb-6 leading-relaxed">
-                                Smart Overtaking Detection - Proyek ini dirancang untuk mendeteksi kendaraan yang menyalip dari kiri dengan memanfaatkan teknologi YOLOv5 dan ESP32. Sistem ini terhubung ke CCTV, mengirim notifikasi ke Telegram, dan menyalakan floodlight sebagai peringatan otomatis. Tujuannya adalah meningkatkan keselamatan di jalan raya.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">YOLOv5</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ESP32</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Computer Vision</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Telegram Bot</span>
+                            <div>
+                                <h3 class="text-3xl font-bold text-white mb-2">Salip Kiri Detection System</h3>
+                                <p class="text-purple-400 font-semibold text-lg">🏆 Featured Project</p>
                             </div>
+                        </div>
+                        
+                        <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                            Smart Overtaking Detection System yang revolusioner - menggunakan teknologi YOLOv5 dan ESP32 
+                            untuk mendeteksi kendaraan yang menyalip dari kiri secara real-time. Sistem terintegrasi dengan 
+                            CCTV, notifikasi Telegram otomatis, dan kontrol floodlight untuk meningkatkan keselamatan jalan raya.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <span class="px-4 py-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full text-white font-medium">YOLOv5</span>
+                            <span class="px-4 py-2 bg-gradient-to-r from-green-500 to-teal-500 rounded-full text-white font-medium">ESP32</span>
+                            <span class="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-white font-medium">Computer Vision</span>
+                            <span class="px-4 py-2 bg-gradient-to-r from-pink-500 to-red-500 rounded-full text-white font-medium">IoT Integration</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Other Projects -->
-                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                            <i class="fas fa-globe text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Website Responsif</h3>
-                        <p class="text-gray-600 mb-4">
-                            Pengembangan website modern dengan desain responsif dan performa optimal untuk berbagai perangkat.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">HTML/CSS</span>
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">JavaScript</span>
-                        </div>
+                <div class="glass-card p-6 rounded-2xl card-3d group hover:neon-glow transition-all duration-500">
+                    <div class="w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-globe text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Responsive Web Apps</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Pengembangan aplikasi web modern dengan desain responsif, performa optimal, dan user experience yang luar biasa.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-full text-white text-sm">React</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full text-white text-sm">Node.js</span>
                     </div>
                 </div>
                 
-                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                            <i class="fas fa-microchip text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">IoT Monitoring System</h3>
-                        <p class="text-gray-600 mb-4">
-                            Sistem monitoring berbasis ESP32 dengan sensor otomatis dan dashboard real-time untuk kontrol jarak jauh.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">ESP32</span>
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Arduino</span>
-                        </div>
+                <div class="glass-card p-6 rounded-2xl card-3d group hover:neon-glow transition-all duration-500">
+                    <div class="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">IoT Monitoring Dashboard</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Dashboard real-time untuk monitoring sistem IoT dengan visualisasi data yang interaktif dan kontrol jarak jauh.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-teal-500 rounded-full text-white text-sm">ESP32</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full text-white text-sm">MQTT</span>
                     </div>
                 </div>
                 
-                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                            <i class="fas fa-robot text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">API Integration Bot</h3>
-                        <p class="text-gray-600 mb-4">
-                            Bot otomatis dengan integrasi API untuk notifikasi dan komunikasi multi-platform yang efisien.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Telegram API</span>
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">PHP</span>
-                        </div>
+                <div class="glass-card p-6 rounded-2xl card-3d group hover:neon-glow transition-all duration-500">
+                    <div class="w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-robot text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">AI-Powered Automation</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Bot cerdas dengan integrasi API untuk otomatisasi komunikasi multi-platform dan notifikasi real-time.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full text-white text-sm">Python</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-pink-500 to-red-500 rounded-full text-white text-sm">API</span>
                     </div>
                 </div>
             </div>
@@ -214,57 +388,60 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Contact Me</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
-                <p class="text-gray-600 text-lg">Hubungi saya untuk kolaborasi atau proyek baru!</p>
+    <section id="contact" class="py-32 bg-gray-900 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-bold gradient-text mb-6">Let's Connect</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Siap untuk berkolaborasi? Mari wujudkan ide teknologi Anda menjadi kenyataan!
+                </p>
             </div>
             
             <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="text-center p-6 rounded-xl bg-gray-50 hover:bg-blue-50 transition-colors">
-                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <div class="glass-card p-8 rounded-2xl text-center card-3d group hover:neon-glow transition-all duration-500">
+                        <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-envelope text-white text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Email</h3>
-                        <a href="mailto:rifanagustian449@gmail.com" class="text-blue-600 hover:text-blue-800 transition-colors">
+                        <h3 class="text-xl font-semibold text-white mb-4">Email</h3>
+                        <a href="mailto:rifanagustian449@gmail.com" class="text-purple-400 hover:text-purple-300 transition-colors text-lg">
                             rifanagustian449@gmail.com
                         </a>
                     </div>
                     
-                    <div class="text-center p-6 rounded-xl bg-gray-50 hover:bg-blue-50 transition-colors">
-                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div class="glass-card p-8 rounded-2xl text-center card-3d group hover:neon-glow transition-all duration-500">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                             <i class="fab fa-whatsapp text-white text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">WhatsApp</h3>
-                        <a href="https://wa.me/6288885252823" target="_blank" class="text-blue-600 hover:text-blue-800 transition-colors">
-                            08885252823
+                        <h3 class="text-xl font-semibold text-white mb-4">WhatsApp</h3>
+                        <a href="https://wa.me/6288885252823" target="_blank" class="text-purple-400 hover:text-purple-300 transition-colors text-lg">
+                            +62 888-5252-823
                         </a>
                     </div>
                     
-                    <div class="text-center p-6 rounded-xl bg-gray-50 hover:bg-blue-50 transition-colors">
-                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div class="glass-card p-8 rounded-2xl text-center card-3d group hover:neon-glow transition-all duration-500">
+                        <div class="w-16 h-16 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                             <i class="fab fa-github text-white text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">GitHub</h3>
-                        <a href="https://github.com/rifanagustian" target="_blank" class="text-blue-600 hover:text-blue-800 transition-colors">
-                            github.com/rifanagustian
+                        <h3 class="text-xl font-semibold text-white mb-4">GitHub</h3>
+                        <a href="https://github.com/rifanagustian" target="_blank" class="text-purple-400 hover:text-purple-300 transition-colors text-lg">
+                            @rifanagustian
                         </a>
                     </div>
                 </div>
                 
-                <div class="text-center mt-12">
-                    <div class="inline-flex space-x-6">
-                        <a href="mailto:rifanagustian449@gmail.com" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
-                            <i class="fas fa-envelope"></i>
+                <!-- Social Links -->
+                <div class="text-center">
+                    <div class="flex justify-center space-x-6">
+                        <a href="mailto:rifanagustian449@gmail.com" class="w-14 h-14 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 neon-glow">
+                            <i class="fas fa-envelope text-xl"></i>
                         </a>
-                        <a href="https://wa.me/6288885252823" target="_blank" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
-                            <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/6288885252823" target="_blank" class="w-14 h-14 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 neon-glow">
+                            <i class="fab fa-whatsapp text-xl"></i>
                         </a>
-                        <a href="https://github.com/rifanagustian" target="_blank" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
-                            <i class="fab fa-github"></i>
+                        <a href="https://github.com/rifanagustian" target="_blank" class="w-14 h-14 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 neon-glow">
+                            <i class="fab fa-github text-xl"></i>
                         </a>
                     </div>
                 </div>
@@ -273,9 +450,15 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <p class="text-gray-400">© 2024 Rifan Agustian. All rights reserved.</p>
+    <footer class="py-12 bg-black relative">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="mb-6">
+                <div class="text-2xl font-bold gradient-text mb-4">Rifan</div>
+                <p class="text-gray-400 text-lg">Crafting the future, one line of code at a time</p>
+            </div>
+            <div class="border-t border-gray-800 pt-6">
+                <p class="text-gray-500">© 2024 Rifan Agustian. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
@@ -284,9 +467,11 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -298,23 +483,20 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
                 }
             });
         });
 
-        // Add scroll effect to navbar
+        // Parallax effect for hero section
         window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                navbar.classList.add('shadow-lg');
-            } else {
-                navbar.classList.remove('shadow-lg');
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero-bg');
+            if (parallax) {
+                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
         });
 
-        // Animate elements on scroll
+        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -329,13 +511,37 @@
             });
         }, observerOptions);
 
-        // Observe all sections for animation
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
+        // Observe elements for scroll animations
+        document.querySelectorAll('.glass-card, .skill-orb').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
         });
+
+        // Dynamic typing effect
+        const typingText = document.querySelector('.typing-animation');
+        if (typingText) {
+            const text = typingText.textContent;
+            typingText.textContent = '';
+            let i = 0;
+            
+            function typeWriter() {
+                if (i < text.length) {
+                    typingText.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                } else {
+                    setTimeout(() => {
+                        typingText.textContent = '';
+                        i = 0;
+                        typeWriter();
+                    }, 2000);
+                }
+            }
+            
+            typeWriter();
+        }
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9623b4fce0699ba3',t:'MTc1MzAyNzU5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9623d010f2dbce53',t:'MTc1MzAyODcwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
