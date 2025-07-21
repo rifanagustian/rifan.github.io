@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rifan Agustian - Developer</title>
+    <title>Rifan Agustian - Creative Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -166,32 +166,28 @@
     <!-- Hero Section -->
     <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative">
         <div class="max-w-7xl mx-auto px-6 py-20 text-center relative z-10">
-            <!-- Profile Image with Advanced Effects -->
-            <div class="relative mx-auto mb-12 w-64 h-64 group">
-                <!-- Outer rotating ring -->
-                <div class="absolute -inset-4 morphing-bg rounded-full opacity-70 blur-sm animate-spin" style="animation-duration: 10s;"></div>
+            <!-- Profile Image with Elegant Effects -->
+            <div class="relative mx-auto mb-10 w-48 h-48 group">
+                <!-- Subtle outer glow -->
+                <div class="absolute -inset-3 bg-gradient-to-r from-purple-500/30 via-blue-500/30 to-cyan-500/30 rounded-full blur-md animate-pulse"></div>
                 
-                <!-- Middle pulsing ring -->
-                <div class="absolute -inset-2 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-full opacity-50 animate-pulse"></div>
-                
-                <!-- Inner glowing border -->
-                <div class="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-full opacity-80 blur-sm"></div>
+                <!-- Elegant border ring -->
+                <div class="absolute -inset-2 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 rounded-full opacity-60 animate-spin" style="animation-duration: 20s;"></div>
                 
                 <!-- Main image container -->
-                <div class="relative w-full h-full rounded-full overflow-hidden glass-card neon-glow floating-animation group-hover:scale-110 transition-all duration-500">
+                <div class="relative w-full h-full rounded-full overflow-hidden glass-card group-hover:scale-105 transition-all duration-500 shadow-2xl">
                     <img src="rifan.jpeg" alt="Rifan Agustian" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-600 to-blue-600" style="display: none;">
-                        <i class="fas fa-user text-6xl text-white drop-shadow-2xl"></i>
+                        <i class="fas fa-user text-4xl text-white drop-shadow-2xl"></i>
                     </div>
                     
-                    <!-- Overlay effects -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-transparent to-blue-900/30 rounded-full"></div>
+                    <!-- Subtle overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 via-transparent to-blue-900/20 rounded-full"></div>
                 </div>
                 
-                <!-- Floating elements around image -->
-                <div class="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-bounce opacity-80"></div>
-                <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-pulse opacity-80"></div>
-                <div class="absolute top-1/2 -left-8 w-4 h-4 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full animate-ping opacity-60"></div>
+                <!-- Minimal floating elements -->
+                <div class="absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-bounce opacity-70"></div>
+                <div class="absolute -bottom-2 -left-2 w-3 h-3 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-pulse opacity-70"></div>
             </div>
             
             <!-- Text Content -->
@@ -315,7 +311,7 @@
             <div class="grid lg:grid-cols-3 gap-8">
                 <!-- Featured Project -->
                 <div class="lg:col-span-3">
-                    <div class="glass-card p-8 rounded-3xl card-3d group hover:neon-glow transition-all duration-500">
+                    <div class="glass-card p-8 rounded-3xl card-3d group hover:neon-glow transition-all duration-500 cursor-pointer" onclick="showProject('salip-kiri')">
                         <div class="flex items-center mb-6">
                             <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fas fa-car text-white text-2xl"></i>
@@ -338,11 +334,16 @@
                             <span class="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-white font-medium">Computer Vision</span>
                             <span class="px-4 py-2 bg-gradient-to-r from-pink-500 to-red-500 rounded-full text-white font-medium">IoT Integration</span>
                         </div>
+                        
+                        <div class="flex items-center text-purple-400 font-semibold">
+                            <span class="mr-2">Klik untuk melihat dashboard</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Other Projects -->
-                <div class="glass-card p-6 rounded-2xl card-3d group hover:neon-glow transition-all duration-500">
+                <div class="glass-card p-6 rounded-2xl card-3d group hover:neon-glow transition-all duration-500 cursor-pointer" onclick="showProject('web-apps')">
                     <div class="w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-globe text-white text-xl"></i>
                     </div>
@@ -350,13 +351,17 @@
                     <p class="text-gray-300 mb-6 leading-relaxed">
                         Pengembangan aplikasi web modern dengan desain responsif, performa optimal, dan user experience yang luar biasa.
                     </p>
-                    <div class="flex flex-wrap gap-2">
+                    <div class="flex flex-wrap gap-2 mb-4">
                         <span class="px-3 py-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-full text-white text-sm">React</span>
                         <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full text-white text-sm">Node.js</span>
                     </div>
+                    <div class="flex items-center text-purple-400 text-sm font-semibold">
+                        <span class="mr-2">Lihat Dashboard</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </div>
                 </div>
                 
-                <div class="glass-card p-6 rounded-2xl card-3d group hover:neon-glow transition-all duration-500">
+                <div class="glass-card p-6 rounded-2xl card-3d group hover:neon-glow transition-all duration-500 cursor-pointer" onclick="showProject('iot-dashboard')">
                     <div class="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-chart-line text-white text-xl"></i>
                     </div>
@@ -364,13 +369,17 @@
                     <p class="text-gray-300 mb-6 leading-relaxed">
                         Dashboard real-time untuk monitoring sistem IoT dengan visualisasi data yang interaktif dan kontrol jarak jauh.
                     </p>
-                    <div class="flex flex-wrap gap-2">
+                    <div class="flex flex-wrap gap-2 mb-4">
                         <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-teal-500 rounded-full text-white text-sm">ESP32</span>
                         <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full text-white text-sm">MQTT</span>
                     </div>
+                    <div class="flex items-center text-purple-400 text-sm font-semibold">
+                        <span class="mr-2">Lihat Dashboard</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </div>
                 </div>
                 
-                <div class="glass-card p-6 rounded-2xl card-3d group hover:neon-glow transition-all duration-500">
+                <div class="glass-card p-6 rounded-2xl card-3d group hover:neon-glow transition-all duration-500 cursor-pointer" onclick="showProject('ai-automation')">
                     <div class="w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-robot text-white text-xl"></i>
                     </div>
@@ -378,14 +387,347 @@
                     <p class="text-gray-300 mb-6 leading-relaxed">
                         Bot cerdas dengan integrasi API untuk otomatisasi komunikasi multi-platform dan notifikasi real-time.
                     </p>
-                    <div class="flex flex-wrap gap-2">
+                    <div class="flex flex-wrap gap-2 mb-4">
                         <span class="px-3 py-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full text-white text-sm">Python</span>
                         <span class="px-3 py-1 bg-gradient-to-r from-pink-500 to-red-500 rounded-full text-white text-sm">API</span>
+                    </div>
+                    <div class="flex items-center text-purple-400 text-sm font-semibold">
+                        <span class="mr-2">Lihat Dashboard</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Project Dashboards (Hidden by default) -->
+    <div id="project-dashboards" class="hidden">
+        <!-- Salip Kiri Dashboard -->
+        <section id="salip-kiri-dashboard" class="min-h-screen bg-gray-900 py-20 hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex items-center justify-between mb-12">
+                    <div>
+                        <h1 class="text-4xl font-bold gradient-text mb-4">Salip Kiri Detection System</h1>
+                        <p class="text-gray-400 text-lg">Real-time Vehicle Overtaking Detection Dashboard</p>
+                    </div>
+                    <button onclick="backToPortfolio()" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-semibold hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-arrow-left mr-2"></i>Back to Portfolio
+                    </button>
+                </div>
+                
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Live Camera Feed -->
+                    <div class="lg:col-span-2 glass-card p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                            <i class="fas fa-video text-red-500 mr-3"></i>Live Camera Feed
+                        </h3>
+                        <div class="bg-gray-800 rounded-lg aspect-video flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-camera text-6xl text-gray-600 mb-4"></i>
+                                <p class="text-gray-400">Camera Feed Simulation</p>
+                                <div class="mt-4 flex justify-center space-x-4">
+                                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                                    <span class="text-green-400 text-sm">LIVE</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Detection Stats -->
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-2xl">
+                            <h4 class="text-lg font-semibold text-white mb-4">Detection Statistics</h4>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-300">Today's Violations</span>
+                                    <span class="text-red-400 font-bold text-xl">23</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-300">This Week</span>
+                                    <span class="text-yellow-400 font-bold text-xl">156</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-300">This Month</span>
+                                    <span class="text-blue-400 font-bold text-xl">642</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-2xl">
+                            <h4 class="text-lg font-semibold text-white mb-4">System Status</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300">YOLOv5 Model</span>
+                                    <span class="px-3 py-1 bg-green-500 rounded-full text-white text-sm">Active</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300">ESP32 Connection</span>
+                                    <span class="px-3 py-1 bg-green-500 rounded-full text-white text-sm">Connected</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300">Telegram Bot</span>
+                                    <span class="px-3 py-1 bg-green-500 rounded-full text-white text-sm">Online</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Detections -->
+                <div class="mt-8 glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-white mb-6">Recent Detections</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="border-b border-gray-700">
+                                    <th class="pb-3 text-gray-300">Time</th>
+                                    <th class="pb-3 text-gray-300">Vehicle Type</th>
+                                    <th class="pb-3 text-gray-300">Confidence</th>
+                                    <th class="pb-3 text-gray-300">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-300">
+                                <tr class="border-b border-gray-800">
+                                    <td class="py-3">14:32:15</td>
+                                    <td class="py-3">Motorcycle</td>
+                                    <td class="py-3"><span class="text-green-400">94%</span></td>
+                                    <td class="py-3"><span class="px-2 py-1 bg-red-500 rounded text-white text-sm">Alert Sent</span></td>
+                                </tr>
+                                <tr class="border-b border-gray-800">
+                                    <td class="py-3">14:28:42</td>
+                                    <td class="py-3">Car</td>
+                                    <td class="py-3"><span class="text-green-400">87%</span></td>
+                                    <td class="py-3"><span class="px-2 py-1 bg-red-500 rounded text-white text-sm">Alert Sent</span></td>
+                                </tr>
+                                <tr class="border-b border-gray-800">
+                                    <td class="py-3">14:15:33</td>
+                                    <td class="py-3">Truck</td>
+                                    <td class="py-3"><span class="text-green-400">91%</span></td>
+                                    <td class="py-3"><span class="px-2 py-1 bg-red-500 rounded text-white text-sm">Alert Sent</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Web Apps Dashboard -->
+        <section id="web-apps-dashboard" class="min-h-screen bg-gray-900 py-20 hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex items-center justify-between mb-12">
+                    <div>
+                        <h1 class="text-4xl font-bold gradient-text mb-4">Web Applications Dashboard</h1>
+                        <p class="text-gray-400 text-lg">Modern Responsive Web Development Projects</p>
+                    </div>
+                    <button onclick="backToPortfolio()" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-semibold hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-arrow-left mr-2"></i>Back to Portfolio
+                    </button>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold text-white mb-4">E-Commerce Platform</h3>
+                        <div class="bg-gray-800 rounded-lg p-4 mb-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-gray-300">Performance Score</span>
+                                <span class="text-green-400 font-bold">98/100</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 98%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-gray-300">
+                            <p>• React.js with TypeScript</p>
+                            <p>• Responsive Design (Mobile-First)</p>
+                            <p>• Payment Gateway Integration</p>
+                            <p>• Real-time Inventory Management</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold text-white mb-4">Learning Management System</h3>
+                        <div class="bg-gray-800 rounded-lg p-4 mb-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-gray-300">User Satisfaction</span>
+                                <span class="text-blue-400 font-bold">4.8/5.0</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 96%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-gray-300">
+                            <p>• Vue.js with Nuxt.js</p>
+                            <p>• Progressive Web App (PWA)</p>
+                            <p>• Video Streaming Integration</p>
+                            <p>• Interactive Quizzes & Assignments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IoT Dashboard -->
+        <section id="iot-dashboard-dashboard" class="min-h-screen bg-gray-900 py-20 hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex items-center justify-between mb-12">
+                    <div>
+                        <h1 class="text-4xl font-bold gradient-text mb-4">IoT Monitoring Dashboard</h1>
+                        <p class="text-gray-400 text-lg">Real-time IoT Device Management & Analytics</p>
+                    </div>
+                    <button onclick="backToPortfolio()" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-semibold hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-arrow-left mr-2"></i>Back to Portfolio
+                    </button>
+                </div>
+                
+                <div class="grid lg:grid-cols-4 gap-6 mb-8">
+                    <div class="glass-card p-6 rounded-2xl text-center">
+                        <i class="fas fa-thermometer-half text-3xl text-red-400 mb-3"></i>
+                        <h4 class="text-white font-semibold mb-2">Temperature</h4>
+                        <p class="text-2xl font-bold text-red-400">28.5°C</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center">
+                        <i class="fas fa-tint text-3xl text-blue-400 mb-3"></i>
+                        <h4 class="text-white font-semibold mb-2">Humidity</h4>
+                        <p class="text-2xl font-bold text-blue-400">65%</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center">
+                        <i class="fas fa-lightbulb text-3xl text-yellow-400 mb-3"></i>
+                        <h4 class="text-white font-semibold mb-2">Light Level</h4>
+                        <p class="text-2xl font-bold text-yellow-400">750 lux</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center">
+                        <i class="fas fa-wifi text-3xl text-green-400 mb-3"></i>
+                        <h4 class="text-white font-semibold mb-2">Devices Online</h4>
+                        <p class="text-2xl font-bold text-green-400">12/15</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-white mb-6">Device Status</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-gray-800 rounded-lg">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                                    <span class="text-white">Smart Thermostat</span>
+                                </div>
+                                <span class="text-green-400">Online</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-gray-800 rounded-lg">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                                    <span class="text-white">Security Camera</span>
+                                </div>
+                                <span class="text-green-400">Online</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-gray-800 rounded-lg">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
+                                    <span class="text-white">Motion Sensor</span>
+                                </div>
+                                <span class="text-red-400">Offline</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-gray-800 rounded-lg">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                                    <span class="text-white">Smart Lights</span>
+                                </div>
+                                <span class="text-green-400">Online</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-gray-800 rounded-lg">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
+                                    <span class="text-white">Door Lock</span>
+                                </div>
+                                <span class="text-yellow-400">Warning</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-gray-800 rounded-lg">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                                    <span class="text-white">Air Quality Sensor</span>
+                                </div>
+                                <span class="text-green-400">Online</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Automation Dashboard -->
+        <section id="ai-automation-dashboard" class="min-h-screen bg-gray-900 py-20 hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex items-center justify-between mb-12">
+                    <div>
+                        <h1 class="text-4xl font-bold gradient-text mb-4">AI Automation Dashboard</h1>
+                        <p class="text-gray-400 text-lg">Intelligent Bot Management & Analytics</p>
+                    </div>
+                    <button onclick="backToPortfolio()" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-semibold hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-arrow-left mr-2"></i>Back to Portfolio
+                    </button>
+                </div>
+                
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold text-white mb-4">Bot Performance</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Messages Processed</span>
+                                <span class="text-green-400 font-bold">1,247</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Success Rate</span>
+                                <span class="text-blue-400 font-bold">98.5%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Response Time</span>
+                                <span class="text-purple-400 font-bold">0.3s</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold text-white mb-4">Active Integrations</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-300">Telegram Bot</span>
+                                <span class="px-3 py-1 bg-green-500 rounded-full text-white text-sm">Active</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-300">WhatsApp API</span>
+                                <span class="px-3 py-1 bg-green-500 rounded-full text-white text-sm">Active</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-300">Email Service</span>
+                                <span class="px-3 py-1 bg-yellow-500 rounded-full text-white text-sm">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold text-white mb-4">Recent Activities</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                <span class="text-gray-300">Auto-reply sent to user #1247</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                <span class="text-gray-300">Scheduled message delivered</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                                <span class="text-gray-300">API integration updated</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="py-32 bg-gray-900 relative">
@@ -542,6 +884,52 @@
             
             typeWriter();
         }
+
+        // Project navigation functions
+        function showProject(projectId) {
+            // Hide main sections
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('about').style.display = 'none';
+            document.getElementById('portfolio').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
+            
+            // Hide all project dashboards
+            const dashboards = document.querySelectorAll('[id$="-dashboard"]');
+            dashboards.forEach(dashboard => {
+                dashboard.classList.add('hidden');
+            });
+            
+            // Show selected project dashboard
+            const targetDashboard = document.getElementById(projectId + '-dashboard');
+            if (targetDashboard) {
+                document.getElementById('project-dashboards').classList.remove('hidden');
+                targetDashboard.classList.remove('hidden');
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function backToPortfolio() {
+            // Hide project dashboards
+            document.getElementById('project-dashboards').classList.add('hidden');
+            const dashboards = document.querySelectorAll('[id$="-dashboard"]');
+            dashboards.forEach(dashboard => {
+                dashboard.classList.add('hidden');
+            });
+            
+            // Show main sections
+            document.getElementById('home').style.display = 'block';
+            document.getElementById('about').style.display = 'block';
+            document.getElementById('portfolio').style.display = 'block';
+            document.getElementById('contact').style.display = 'block';
+            
+            // Scroll to portfolio section
+            document.getElementById('portfolio').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9623d010f2dbce53',t:'MTc1MzAyODcwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9628ccee96bf6beb',t:'MTc1MzA4MTAwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
